@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     border: 0;
+    user-select: none;
 }
 *,
 *:before,
@@ -31,8 +32,6 @@ body {
     height: 100%;
     width: 100%;
     font-size: 100%;
-    line-height: 1;
-    font-size: 14px;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -55,6 +54,7 @@ button::-moz-focus-inner {
 a,
 a:visited {
     text-decoration: none;
+    color: inherit;
 }
 a:hover {
     text-decoration: none;
@@ -73,4 +73,6 @@ h5,
 h6 {
     font-size: inherit;
     font-weight: inherit;
+    padding: 0;
+    margin: 0;
 }
