@@ -1,0 +1,20 @@
+-let phones = ['+7 (999) 999 99 99', '+7 (999) 999 99 99']
+-let addresses = ['г. Минск ул. Декабристов 31', 'г. Минск ул. Захарова  87 ']
+
+<footer class="footer">
+    <div class="container">
+       +logo()(class='footer')
+       <div class="footer__data">
+            <div class="footer__column">
+                <h3 class="footer__column-title">Контакты</h3>
+                each phone in phones 
+                    <p class="footer__column-item">#{phone}</p>
+            </div>
+            <div class="footer__column">
+                <h3 class="footer__column-title">Местонахождение</h3>
+                each address in addresses
+                    <p class="footer__column-item">#{address}</p>
+            </div>
+       </div>
+    </div>
+</footer>

@@ -1,18 +1,18 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 
 // PLUGINS
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const PugPlugin = require('pug-plugin');
 
 // WEBPACK SETUP
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: {
-        main: './index.js',
+        index: './index.pug',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -30,15 +30,14 @@ module.exports = {
                         options: {
                             presets: [
                                 '@babel/preset-env',
-                            ]
-                        }
-                    }
+                            ],
+                        },
+                    },
                 ],
             },
             {
                 test: /\.(scss|css)$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader',
                     'resolve-url-loader',
@@ -49,10 +48,6 @@ module.exports = {
                         },
                     },
                 ],
-            },
-            {
-                test: /\.pug$/,
-                loader: 'pug-loader',
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/i,
@@ -69,16 +64,13 @@ module.exports = {
                 test: /\.(woff2?|eot|ttf|otf)$/i,
                 type: 'asset/resource',
             },
+            {
+                test: /.pug$/,
+                use: [PugPlugin.loader], // Pug loader
+            },
         ],
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'index.pug'),
-            filename: 'index.html',
-        }),
-        new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
-        }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin({
             patterns: [
@@ -94,7 +86,13 @@ module.exports = {
         new ESLintPlugin({
             context: path.resolve(__dirname, 'src'),
             fix: true,
-        })
+        }),
+        new PugPlugin({
+            css: {
+                // output filename of styles
+                filename: 'css/[name].[contenthash:8].css',
+            },
+        }),
     ],
     devServer: {
         watchFiles: path.join(__dirname, 'src'),
@@ -122,6 +120,12 @@ module.exports = {
             fonts: path.resolve(__dirname, 'public', 'fonts'),
             images: path.resolve(__dirname, 'public', 'images'),
             icons: path.resolve(__dirname, 'src', 'icons'),
+            mixins: path.resolve(__dirname, 'src', 'views', 'mixins'),
+            pages: path.resolve(__dirname, 'src', 'views', 'pages'),
+            views: path.resolve(__dirname, 'src', 'views'),
+            components: path.resolve(__dirname, 'src', 'views', 'components'),
+            style: path.resolve(__dirname, 'src', 'style'),
+            source: path.resolve(__dirname, 'src'),
         },
     },
 };
