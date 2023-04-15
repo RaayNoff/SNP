@@ -7,9 +7,11 @@
         <title>Website</title>
     </head>
     <body>
-
-        include ./components/header/header
+        include components/header/header
         block content
-        include ./components/footer/footer
+        include components/footer/footer
+
+        link(href=require('style/index.scss') rel='stylesheet')
+        script(src=require('source/index.js') defer='defer')
     </body>
 </html>

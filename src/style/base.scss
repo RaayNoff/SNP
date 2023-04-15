@@ -4,7 +4,24 @@ html {
     color: $white;
 }
 
+body { 
+    display: flex;
+    flex-flow: column nowrap;
+    
+    header { 
+        flex-shrink: 0;
+    }
+    main {
+        background: $main-background;
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+    footer {
+        flex-shrink: 0;
+    }
+}
+
 .container { 
-    width: 1160px;
+    max-width: 1160px;
     margin: 0 auto;
 }

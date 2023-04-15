@@ -1,3 +1,6 @@
-extends ./views/layout.pug
+extends views/layout.pug
 
-block content 
+include mixins/logo
+
+block content
+    include pages/auth/auth
