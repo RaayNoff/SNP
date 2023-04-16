@@ -1,0 +1,22 @@
+.custom-input { 
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    font-size: $font-size-14;
+    line-height: $line-height-17;
+
+    &-label { 
+        width: fit-content;
+        display: inline-block;
+        cursor: pointer;
+        margin-bottom: 3px;
+        font-weight: $font-weight-400;
+    }
+
+    &-field { 
+        padding: 7px 8px;
+        background-color: $black-18;
+        font-weight: $font-weight-300;
+        color: $lightgray;
+    }
+}
