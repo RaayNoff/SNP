@@ -1,1 +1,20 @@
-<main></main>
+extends views/layout.pug
+
+include mixins/mixins.pug
+
+block content
+    <main class="auth">
+        <div class="container">
+            <form class="auth__form">
+                <div class="auth__form-header">
+                    <div class="auth__form-header-logo">
+                        include images/logo.svg
+                    </div>
+                    <h3 class="auth__form-header-title">Вход в Wellness Republic</h3>
+                </div>
+                +input('Логин', 'login')(class="auth__form-input", placeholder="Введите ваш логин...", type="text")
+                +input('Пароль', 'password')(class="auth__form-input", placeholder="Введите ваш пароль...", type="password")
+                +button('Войти')(class="auth__form-submit")
+            </form>
+        </div>
+    </main>

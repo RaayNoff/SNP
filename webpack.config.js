@@ -12,7 +12,7 @@ const PugPlugin = require('pug-plugin');
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: {
-        index: './index.pug',
+        index: './views/pages/auth/auth.pug',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
