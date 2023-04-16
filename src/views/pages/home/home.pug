@@ -1,0 +1,121 @@
+extends views/layout.pug
+
+include mixins/mixins.pug
+
+block content
+    <main class="home">
+            <section class="home__hero hero">
+                <div class="container">
+                    <div class="hero__info">
+                        <h1 class="hero__title">
+                        | Улучшите своё здоровье<br/>по новой методике от<br/>наших тренеров!
+                        </h1>
+                        <p class="hero__subtitle">
+                        | Физкультурно-оздоровительный центр<br/>“Wellness Republic”
+                        </p>
+                        +button('Получить персональный тариф')(class="hero__button")
+                    </div>
+                    <div class="hero__images">
+                        <div class="hero__img-wrapper large-dumbbell">
+                            <img src="images/dumbbell.png" alt="dumbbell">
+                        </div>
+                        <div class="hero__img-wrapper small-dumbbell">
+                            <img src="images/dumbbell-small.png" alt="dumbbell">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="home__wave">
+                include images/wave.svg
+            </div>
+            <section class="home__info info">
+                <div class="container">
+                    <h2 class="info__title title">
+                        | ФИЗКУЛЬТУРНО-ОЗДОРОВИТЕЛЬНЫЙ ЦЕНТР<br/>“WELLNESS REPUBLIC” В МИНСКЕ
+                    </h2>
+                    <p class="info__descr descr">
+                        <span>Спортивный центр “Wellness republic” - это территория здоровья и красоты!</span>
+                        <span>Вместе с нами Вы обретете не только отличные формы и хорошее настроение, но<br>и получаете возможности для гармоничного развития духовных и физических сторон в<br>любом интересующем вас направлении.</span>
+                        <span>Наш физкультурно-оздоровительный центр предоставляет:</span>
+                    </p>
+                    -let badges = ['Настольный теннис', 'Бассейн', 'Тренажерный зал', 'Игровой зал', 'Фитобар']
+                    <div class="info__badges">
+                        each badge in badges
+                            +badge(badge)
+                    </div>
+                    <p class="info__descr">Помимо этого в «Wellness republic» вы получите высококвалифицированных<br>тренеров, которые готовы помочь вам становиться лучшими как в индивидуальном<br>подходе, так и в групповых занятиях</p>
+                </div>
+            </section>
+            <section class="home__gallery gallery">
+                <div class="container">
+                    <h2 class="gallery__title title">Галерея</h2>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            -let n = 1;
+                            while n < 6
+                                div(class="swiper-slide")
+                                    div(class="swiper-slide-wrapper")
+                                        img(src= "images/gym" + n + ".jpg")
+                                        -n++
+                        </div>
+                        <div class="swiper-button-prev">
+                            include images/chevron-left.svg
+                        </div>
+                        <div class="swiper-button-next">
+                            include images/chevron-right.svg
+                        </div>                      
+                    </div>
+                    <div class="gallery__controls"> 
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="home__adv adv">
+                <div class="container">
+                    <h2 class="adv__title title">наши преимущества</h2>
+                    <div class="adv__cards">
+                        <div class="blob">
+                            include images/blob1.svg
+                        </div>
+                        <div class="blob">
+                            include images/blob2.svg
+                        </div>
+                        <div class="blob">
+                            include images/blob3.svg
+                        </div>
+                        <div class="blob">
+                            include images/blob4.svg
+                        </div>
+                        div(class='adv-card')
+                            div(class='adv-card__icon' style='background-color: #258181')
+                                include images/wallet.svg
+                            
+                            h3(class='adv-card__title') Программа лояльности
+                            p(class="adv-card__descr descr") Кэшбек за тренировку
+                        div(class='adv-card')
+                            div(class='adv-card__icon' style='background-color: #99C939')
+                                include images/user.svg
+                            
+                            h3(class='adv-card__title') Опытные тренеры
+                            p(class="adv-card__descr descr") Опытные тренеры - стаж работы от 3 лет
+                        div(class='adv-card')
+                            div(class='adv-card__icon' style='background-color: #31AC31')
+                                include images/ruler.svg
+                            
+                            h3(class='adv-card__title') Большая площадь
+                            p(class="adv-card__descr descr") Размер комплекса 2000 кв. метров
+                    </div>
+                </div>
+            </section>
+            <section class="home__offer offer">
+                <div class="container">
+                    <div class="offer__logo">
+                        include images/logo.svg
+                    </div>
+                    <h2 class="offer__title title">Получи бонус на первую покупку в виде 35%<br>скидки на любой абонемент</h2>
+                    +button('ПЕРЕЙТИ В ЛИЧНЫЙ КАБИНЕТ')(class="offer__button")
+                </div>
+            </section>
+
+            script(src=require('./home.js') defer='defer')
+    </main>

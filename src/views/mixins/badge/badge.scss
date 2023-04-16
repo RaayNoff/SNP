@@ -1,0 +1,21 @@
+.custom-badge  {
+    position: relative;
+    display: inline-block;
+    padding: 4px 27px; 
+    background-color: $white;
+    border-radius: $border-radius-10;
+
+    &__text { 
+        color: $full-black;
+        line-height: $line-height-28;
+        font-size: $font-size-24;
+        font-weight: $font-weight-500;
+    }
+
+    &__check {
+        display: inline-block;
+        position: absolute;
+        right: -12px;
+        bottom: -12px;
+    }
+}
