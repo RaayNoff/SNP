@@ -1,0 +1,39 @@
+.panel-price {
+    width: 632px;
+    height: 120px;
+    background-color: $black-18;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.right-side{
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+
+}
+
+.left-side{
+    font-weight: $font-weight-300;
+    font-size: $font-size-14;
+    padding-left: 6px;
+
+    &__label{
+        padding: 10px 0px 16px 0px;
+    }
+    &__price{
+        font-weight: $font-weight-500;
+        font-size: $font-size-24;
+        color: $aqua;
+        padding-bottom: 8px;
+    }
+    &__white-price{
+        color: $white;
+    }
+    &__year-price{
+        padding-bottom: 3px;
+    }
+}

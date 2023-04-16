@@ -1,0 +1,11 @@
+mixin panelPrice(label, price, yearPrice, benefit)
+    div(class='panel-price')
+        section(class='panel-price__left-side left-side')
+            p(class='left-side__label') #{label} абонемент
+            p(class='left-side__price') #{price}
+                span(class='left-side__white-price')  в месяц
+            p(class='left-side__year-price') #{yearPrice} в год
+            p(class='left-side__benefit') #{benefit}
+        section(class='panel-price__right-side right-side')
+            div(class!=attributes.class)
+                +button("КУПИТЬ")
