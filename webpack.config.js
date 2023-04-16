@@ -13,10 +13,11 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: {
         index: './views/pages/auth/auth.pug',
+        home: './views/pages/home/home.pug',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.[contenthash:8].js',
+        filename: 'bundle.[contenthash:16].js',
         assetModuleFilename: path.join('assets', '[name].[contenthash][ext]'),
     },
     module: {
@@ -85,7 +86,7 @@ module.exports = {
         }),
         new ESLintPlugin({
             context: path.resolve(__dirname, 'src'),
-            fix: true,
+            fix: false,
         }),
         new PugPlugin({
             css: {
@@ -97,6 +98,7 @@ module.exports = {
     devServer: {
         watchFiles: path.join(__dirname, 'src'),
         port: 9000,
+        hot: true,
     },
     optimization: {
         minimizer: [
