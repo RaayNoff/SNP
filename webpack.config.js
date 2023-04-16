@@ -14,6 +14,7 @@ module.exports = {
     entry: {
         index: './views/pages/auth/auth.pug',
         home: './views/pages/home/home.pug',
+        account: '/views/pages/account/account.pug',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
