@@ -1,0 +1,31 @@
+extends views/layout.pug
+
+include mixins/mixins.pug
+
+block content
+    <main class='tariffs'>
+        <div class="container">
+            <h2 class="tariffs__title page-title">Тарифный план</h2>
+            <div class="tariffs__items">
+                -let items = [{label: '“Лайт”', duration: 'Абонемент на месяц', description: 'Посещение в любое время, заморозка до 7 дней', price: '3000р'}, {label: '“Медиум”', duration: 'Абонемент на полгода', description: 'Посещение в любое время, заморозка до 7 дней', price: '2000р'}, {label: '“Хард”', duration: 'Абонемент на год', description: 'Посещение в любое время, заморозка до 7 дней', price: '1500р'}]
+
+                each item in items
+                    <div class="tariffs__item">
+                        <h2 class="tariffs__item-label">#{item.label}</h2>
+                        <p class="tariffs__item-duration">#{item.duration}</p>
+                        <p class="tariffs__item-description">#{item.description}</p>
+                        <p class="tariffs__item-price">#{item.price}</p>
+                    </div>
+            </div>
+            <h2 class="tariffs__title page-title">Бонусная система</h2>
+            <p class="tariffs__benefits">
+                | 10% кэшбек при покупке абонемента на год.<br>
+                | 5% кэшбек при покупке абонемента на полгода.<br>
+                | 3% кэшбек при покупке абонемента на месяц.<br>
+                | Приведи друга и получи 250 бонусов.<br>
+                | 5 бонусов за каждую тренировку.<br>
+                | 350 бонусов в честь дня рождения.<br>
+                | Каждый бонус равен одному рублю.<br>
+            </p>
+        </div>
+    </main>
