@@ -1,8 +1,10 @@
--let menuItems = {trainings: 'Виды тренировок', tariff: 'Тарифный план', treners: 'Наши тренеры', accounts:'Мой аккаунт'}
+-let menuItems = {trainings: 'Виды тренировок', tariffs: 'Тарифный план', treners: 'Наши тренеры', accounts:'Мой аккаунт'}
 
 <header class="header">
     <div class="container">
-        +logo()(class="header")
+        <a href="home.html" class="header__logo-wrapper">
+            +logo()(class="header")
+        </a>
         <ul class="header__navigation">
             each val, key in menuItems
              <li class="header__navigation-item">

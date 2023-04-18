@@ -1,0 +1,76 @@
+.tariffs {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 83px;
+
+    %defaultText {
+        font-size: $font-size-20;
+        line-height: $line-height-24;
+    }
+
+    .container {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    &__title {
+        margin-bottom: 50px;
+    }
+
+    &__items {
+        display: grid;
+        margin: 0 auto;
+        gap: 60px;
+        grid-template-columns: repeat(3, 12.5vw);
+        grid-template-rows: minmax(15vw, fit-content);
+        margin-bottom: 84px;
+    }
+
+    &__item {
+        padding: 18px 7px 21px 7px;
+        border-radius: $border-radius-10;
+
+        &:nth-child(1) {
+            background-color: $red;
+            box-shadow: -10px 4px 30px rgba(215, 61, 61, 0.15);
+        }
+        &:nth-child(2) {
+            background-color: $aqua;
+            box-shadow: 0px 4px 30px rgba(37, 129, 129, 0.15);
+        }
+        &:nth-child(3) {
+            background-color: $green;
+            box-shadow: 10px 4px 30px rgba(23, 135, 13, 0.15);
+        }
+
+        &-label {
+            font-size: $font-size-30;
+            line-height: $line-height-36;
+            font-weight: $font-weight-500;
+            margin-bottom: 7px;
+        }
+
+        &-duration {
+            @extend %defaultText;
+            margin-bottom: 30px;
+        }
+
+        &-description {
+            @extend %defaultText;
+            margin-bottom: 44px;
+        }
+
+        &-price { 
+            text-align: right;
+            font-weight: $font-weight-500;
+            font-size: $font-size-30;
+            line-height: $line-height-36;
+            padding-right: 16px;
+        }
+    }
+
+    &__benefits { 
+        font-size: $font-size-18;
+        line-height: $line-height-30;
+    }
+}
