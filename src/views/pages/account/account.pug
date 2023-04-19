@@ -5,27 +5,27 @@ include mixins/mixins.pug
 block content
     <main class="account">
         <div class="container">
-            <section class="account__texts texts">
-                <h1 class="texts__title">МОЙ АККАУНТ</h1>
-                <a class="texts__link" href="/home.html">Выйти</a>
-            </section>
-            <section class="account__panel panel">
-                <section class="panel__balance balance">
+            <div class="account__hero">
+                <h1 class="account__hero__title">Мой аккаунт</h1>
+                <a class="account__hero__link" href="/home.html">Выйти</a>
+            </div>
+            <div class="account__panel panel">
+                <div class="panel__balance balance">
                     <h3 class="balance__title">Мой баланс</h3>
-                    <h2 class="balance__sum">
-                        <span id="balance">10.000</span> рублей
+                    <h2 class="balance__count">
+                        <span id="balance"></span> рублей
                     </h2>
-                    <a class="balance__link">Пополнить баланс</a>
-                </section>
-                <section class="panel__plans plans">
+                    <button class="balance__link">Пополнить баланс</button>
+                </div>
+                <div class="panel__plans plans">
                     <p class="plans__text">Ваш текущий тариф: 
-                        <span id="current-plan">Годовой абонемент</span>
+                        <span id="current-plan"></span>
                     </p>
-                    +panelPrice('Годовой', '1500р', '18.000р','Вы сохраните 50%')(class="plans__first")
-                    +panelPrice('Полугодовой', '2000р', '24.000р','Вы сохраните 33%')(class="plans__second")
-                    +panelPrice('Месячный', '3000р', '36.000р','Простой план на месяц')(class="plans__third")
-                </section>
-            </section>
+                    +panel-price('Годовой', '1500р', '18.000р','Вы сохраните 50%')(class="plans__first")
+                    +panel-price('Полугодовой', '2000р', '24.000р','Вы сохраните 33%')(class="plans__second")
+                    +panel-price('Месячный', '3000р', '36.000р','Простой план на месяц')(class="plans__third")
+                </div>
+            </div>
         </div>
     </main>
 

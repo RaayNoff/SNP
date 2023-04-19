@@ -2,6 +2,34 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &__hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    
+        &__title{
+            font-size: $font-size-30;
+            font-weight: $font-weight-500;
+            padding-bottom: 24px;
+        }
+    
+        &__link{
+            padding-bottom: 30px;
+            text-decoration: none;
+            text-decoration-color: none;
+            font-size: $font-size-24;
+            font-weight: $font-weight-500;
+            color: $red;
+        }
+        &__link:hover {
+            text-decoration: underline;
+        }
+        &__link:visited {
+            color: $red;
+        }
+    }
 }
 
 .panel {
@@ -10,12 +38,12 @@
     align-items: center;
     background-color: $gray;
     border-radius: 5px;
-    width: 660px;
-    height: 616px;
+    min-width: 660px;
+    min-height: 616px;
     margin-bottom: 121px;
 
     &__balance {
-        margin: 26px 0px 35px 0px;
+        margin: 28px 0px 35px 0px;
     }
 }
 
@@ -28,7 +56,7 @@
         font-weight: $font-weight-400;
         padding-bottom: 6px;
     }
-    &__sum{
+    &__count{
         font-size: $font-size-24;
         font-weight: $font-weight-500;
         color: $aqua;
@@ -37,46 +65,20 @@
     &__link {
         font-size: $font-size-14;
         font-weight: $font-weight-300;
+        color: $white;
+        cursor: pointer;
         text-decoration: underline;
-        cursor: pointer
-    }
-}
-
-.texts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px 0px 0px 0px;
-
-    &__title{
-        font-size: $font-size-30;
-        font-weight: $font-weight-500;
-        padding: 0px 0px 23px 0px;
-    }
-
-    &__link{
-        padding: 0px 0px 30px 0px;
-        text-decoration: none;
-        text-decoration-color: none;
-        font-size: $font-size-24;
-        font-weight: 500;
-        color: $red;
-    }
-    &__link:hover {
-        text-decoration: underline;
-    }
-    &__link:visited {
-        color: $red;
+        background: none;
     }
 }
 
 .plans {
     display: grid;
-    gap: 10px;
+    gap: 13px;
+    width: 95.76%;
 
     &__text{
-        padding-bottom: 16px;
-        font-size: $font-size-18;
-        font-weight: $font-weight-400;
+        padding-bottom: 15px;
+        $descr
     }
 }

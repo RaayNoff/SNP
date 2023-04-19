@@ -1,57 +1,61 @@
 /* eslint-disable prefer-const */
-const submitLinkClassName = 'balance__link';
-const submitLink = document.querySelector(`.${submitLinkClassName}`);
-const submit1500PriceButtonClassName = 'plans__first';
-const submitButton1500 = document.querySelector(`.${submit1500PriceButtonClassName}`);
-const submit2000PriceButtonClassName = 'plans__second';
-const submitButton2000 = document.querySelector(`.${submit2000PriceButtonClassName}`);
-const submit3000PriceButtonClassName = 'plans__third';
-const submitButton3000 = document.querySelector(`.${submit3000PriceButtonClassName}`);
+const getBalanceClassName = 'balance__link';
+const Button1500ClassName = 'plans__first';
+const Button2000ClassName = 'plans__second';
+const Button3000ClassName = 'plans__third';
+
+const getBalance = document.querySelector(`.${getBalanceClassName}`);
+const Button1500 = document.querySelector(`.${Button1500ClassName}`);
+const Button2000 = document.querySelector(`.${Button2000ClassName}`);
+const Button3000 = document.querySelector(`.${Button3000ClassName}`);
 
 let balance = 0;
-let namePlan = 'У вас нет активного абонемента';
+let currentSub = 'У вас нет активного абонемента';
 
-document.getElementById('balance').innerText = balance;
-document.getElementById('current-plan').innerText = namePlan;
+const balanceElement = document.getElementById('balance');
+const currentPlan = document.getElementById('current-plan');
 
-submitLink.addEventListener('click', (event) => {
+const paycheck = 5000;
+const yearSub = 18000;
+const halfYearSub = 12000;
+const monthSub = 3000;
+
+const yearSubLabel = 'Годовой абонемент';
+const halfYearSubLabel = 'Полугодовой абонемент';
+const monthSubLabel = 'Месячный абонемент';
+const noMoney = 'Не хватает денег на балансе';
+
+currentPlan.innerText = currentSub;
+balanceElement.innerText = balance;
+
+getBalance.addEventListener('click', (event) => {
     event.preventDefault();
-    balance += 5000;
-    document.getElementById('balance').innerText = balance;
+    balance += paycheck;
+    balanceElement.innerText = balance;
 });
 
-submitButton1500.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (balance >= 18000) {
-        balance -= 18000;
-        namePlan = 'Годовой абонемент';
-        document.getElementById('balance').innerText = balance;
-        document.getElementById('current-plan').innerText = namePlan;
+function onClick(subPrice, subLabel) {
+    if (balance >= subPrice) {
+        balance -= subPrice;
+        currentSub = subLabel;
+        balanceElement.innerText = balance;
+        currentPlan.innerText = currentSub;
     } else {
-        alert('Не хватает денег на балансе');
+        alert(noMoney);
     }
+}
+
+Button1500.addEventListener('click', (event) => {
+    event.preventDefault();
+    onClick(yearSub, yearSubLabel);
 });
 
-submitButton2000.addEventListener('click', (event) => {
+Button2000.addEventListener('click', (event) => {
     event.preventDefault();
-    if (balance >= 12000) {
-        balance -= 12000;
-        namePlan = 'Полугодовой абонемент';
-        document.getElementById('balance').innerText = balance;
-        document.getElementById('current-plan').innerText = namePlan;
-    } else {
-        alert('Не хватает денег на балансе');
-    }
+    onClick(halfYearSub, halfYearSubLabel);
 });
 
-submitButton3000.addEventListener('click', (event) => {
+Button3000.addEventListener('click', (event) => {
     event.preventDefault();
-    if (balance >= 3000) {
-        balance -= 3000;
-        namePlan = 'Месячный абонемент';
-        document.getElementById('balance').innerText = balance;
-        document.getElementById('current-plan').innerText = namePlan;
-    } else {
-        alert('Не хватает денег на балансе');
-    }
+    onClick(monthSub, monthSubLabel);
 });
