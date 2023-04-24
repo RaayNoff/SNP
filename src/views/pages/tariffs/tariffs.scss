@@ -11,22 +11,26 @@
     .container {
         display: flex;
         flex-flow: column nowrap;
+        padding: 0;
     }
 
     &__title {
         margin-bottom: 50px;
     }
 
-    &__items {
-        display: grid;
+&__items {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
         margin: 0 auto;
-        gap: 60px;
-        grid-template-columns: repeat(3, 12.5vw);
-        grid-template-rows: minmax(15vw, fit-content);
+        row-gap: 60px;
+        column-gap: 60px;
         margin-bottom: 84px;
     }
 
     &__item {
+        width: 240px;
         padding: 18px 7px 21px 7px;
         border-radius: $border-radius-10;
 
@@ -72,5 +76,10 @@
     &__benefits { 
         font-size: $font-size-18;
         line-height: $line-height-30;
+
+        @media (max-width: $tablet-width-small){
+            font-size: $font-size-14;
+            line-height: $line-height-24;
+        }
     }
 }
