@@ -6,12 +6,20 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+    position: relative;
 
-.right{
-    display: flex;
-    align-items: center;
-    padding-right: 20px;
+    &__button {
+        padding-top: 40px;
+        padding-right: 20px;
+
+        @media (max-width: $tablet-width-small) {
+            padding-right: 10px;
+        }
+        @media (max-width: $mobile-width) {
+            position: absolute;
+            left: 53.5%;
+        }
+    }
 }
 
 .left{
@@ -29,6 +37,16 @@
         color: $aqua;
         padding-bottom: 8px;
         line-height: 28px;
+
+        @media (max-width: $tablet-width) {
+            font-size: $font-size-24;
+        }
+        @media (max-width: $tablet-width-small) {
+            font-size: $font-size-24;
+        }
+        @media (max-width: $mobile-width) {
+            font-size: $font-size-18;
+        }
     }
     span{
         color: $white;

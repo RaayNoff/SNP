@@ -6,6 +6,5 @@ mixin subscription(label, monthPrice, yearPrice, benefit)
                 span  в месяц
             p(class='left__year-price') #{yearPrice} в год
             p(class='left__benefit') #{benefit}
-        section(class='subscription__right right')
-            div(class!=attributes.class)
-                +button("КУПИТЬ")
+        div(class='subscription__button')
+            +button("КУПИТЬ")(class!=attributes.class)
