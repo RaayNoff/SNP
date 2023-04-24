@@ -1,0 +1,32 @@
+extends views/layout.pug
+
+include mixins/mixins.pug
+
+block content
+    <main class="account">
+        <div class="container">
+            <div class="account__hero">
+                <h1 class="account__hero__title">Мой аккаунт</h1>
+                <a class="account__hero__link" href="/home.html">Выйти</a>
+            </div>
+            <div class="account__panel panel">
+                <div class="panel__balance balance">
+                    <h3 class="balance__title">Мой баланс</h3>
+                    <h2 class="balance__count">
+                        <span id="balance"></span> рублей
+                    </h2>
+                    <button class="balance__link">Пополнить баланс</button>
+                </div>
+                <div class="panel__plans plans">
+                    <p class="plans__text descr">Ваш текущий тариф: 
+                        <span id="current-plan"></span>
+                    </p>
+                    +subscription('Годовой', '1500р', '18.000р','Вы сохраните 50%')(class="plans__first")
+                    +subscription('Полугодовой', '2000р', '24.000р','Вы сохраните 33%')(class="plans__second")
+                    +subscription('Месячный', '3000р', '36.000р','Простой план на месяц')(class="plans__third")
+                </div>
+            </div>
+        </div>
+    </main>
+
+    script(src=require('./account.js') defer='defer')

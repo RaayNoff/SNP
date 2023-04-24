@@ -1,0 +1,63 @@
+.subscription {
+    height: 120px;
+    background-color: $black-18;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+
+    &__button {
+        padding-top: 40px;
+        padding-right: 20px;
+
+        @media (max-width: $tablet-width-small) {
+            padding-right: 10px;
+        }
+        @media (max-width: $mobile-width) {
+            position: absolute;
+            left: 53.5%;
+        }
+    }
+}
+
+.left{
+    font-weight: $font-weight-300;
+    font-size: $font-size-14;
+    padding-left: 9px;
+
+    &__label{
+        padding: 6px 0px 16px 0px;
+        line-height: 17px;
+    }
+    &__price{
+        font-weight: $font-weight-500;
+        font-size: $font-size-24;
+        color: $aqua;
+        padding-bottom: 8px;
+        line-height: 28px;
+
+        @media (max-width: $tablet-width) {
+            font-size: $font-size-24;
+        }
+        @media (max-width: $tablet-width-small) {
+            font-size: $font-size-24;
+        }
+        @media (max-width: $mobile-width) {
+            font-size: $font-size-18;
+        }
+    }
+    span{
+        color: $white;
+        line-height: 17px;
+    }
+    &__year-price{
+        padding-bottom: 3px;
+        line-height: 17px;
+    }
+    &__benefit {
+        padding-bottom: 8px;
+        line-height: 17px;
+    }
+}

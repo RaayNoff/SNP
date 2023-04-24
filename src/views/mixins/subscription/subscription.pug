@@ -1,0 +1,10 @@
+mixin subscription(label, monthPrice, yearPrice, benefit)
+    div(class='subscription')
+        section(class='subscription__left left')
+            p(class='left__label') #{label} абонемент
+            p(class='left__price') #{monthPrice}
+                span  в месяц
+            p(class='left__year-price') #{yearPrice} в год
+            p(class='left__benefit') #{benefit}
+        div(class='subscription__button')
+            +button("КУПИТЬ")(class!=attributes.class)
