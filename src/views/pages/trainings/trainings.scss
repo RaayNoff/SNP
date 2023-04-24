@@ -1,6 +1,8 @@
 .trainings {
     padding-top: 50px;
     padding-bottom: 140px;
+
+
     .container {
         display: flex;
         justify-content: center;
@@ -15,18 +17,28 @@
     &__list {
         display: flex;
         flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
         column-gap: 67px;
         row-gap: 60px;
+
+        @media (max-width: $tablet-width-small) {
+            column-gap: 10px;
+            row-gap: 34px;
+        }
     }
 
     &__item {
-        width: 12.401vw;
-        max-width: 233px;
+        width: 233px;
         text-align: center;
         display: flex;
         flex-flow: column nowrap;
         border-radius: $border-radius-5;
         overflow: hidden;
+
+        @media (max-width: $tablet-width-small){
+              width: 210px;
+        }
 
         &-title {
             position: relative;
@@ -41,10 +53,10 @@
             font-weight: $font-weight-500;
             background-color: $red;
 
-            &:before { 
+            &:before {
                 display: block;
                 position: absolute;
-                content: '';
+                content: "";
                 bottom: -20px;
                 left: 0;
                 width: 100%;
@@ -66,7 +78,9 @@
 
             padding: 15px 15px 25px 15px;
 
-            
+            @media (max-width: $tablet-width-small){
+                height: 180px;
+            }
         }
     }
 }

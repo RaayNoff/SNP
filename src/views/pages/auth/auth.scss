@@ -3,6 +3,12 @@
 
     .container {
         max-width: 550px;
+        @media (max-width: $tablet-width-small) {
+            max-width: 464px;
+        }
+        @media (max-width: $mobile-width) {
+            max-width: 300px;
+        }
     }
 
     &__form {
@@ -15,7 +21,11 @@
         flex-flow: column nowrap;
         align-items: center;
 
-        &-header {         
+        @media (max-width: $mobile-width) {
+            padding: 22px 9px 34px 9px;
+        }
+
+        &-header {
             margin-bottom: 33px;
 
             &-logo {
@@ -23,7 +33,7 @@
                 width: 50px;
                 height: 50px;
 
-                svg { 
+                svg {
                     width: 100%;
                     height: 100%;
                 }
@@ -33,12 +43,22 @@
                 font-size: $font-size-30;
                 line-height: $line-height-36;
                 font-weight: $font-weight-500;
+
+                @media (max-width: $tablet-width-small) {
+                    font-size: $font-size-24;
+                    line-height: $line-height-28;
+                }
+
+                @media (max-width: $mobile-width){
+                    font-size: $font-size-18;
+                    line-height: $line-height-21;
+                }
             }
         }
 
-        &-input { 
+        &-input {
             margin-bottom: 21px;
-            &:last-child{
+            &:last-child {
                 margin-bottom: 41px;
             }
         }
