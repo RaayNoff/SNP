@@ -1,51 +1,80 @@
-.footer { 
+.footer {
     background-color: $footer-background;
 
-    .container { 
+    .container {
         display: flex;
-        flex-flow: row nowrap;
-        column-gap: 7.877vw;
+        flex-flow: row wrap;
 
-        padding: 56px 0;
+        padding: 56px 12px;
+
+        @media (max-width: $tablet-width) {
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+
+            padding: 19px 0 37px 0;
+        }
     }
 
-    &__logo { 
+    &__logo {
         display: flex;
         align-items: center;
+        margin-right: auto;
 
-        &-img { 
+        &-img {
             width: 30px;
             height: 30px;
             margin-right: 15px;
 
-            svg { 
+            svg {
                 width: 100%;
                 height: 100%;
             }
         }
 
-        &-title { 
+        &-title {
             font-size: $font-size-24;
             line-height: $line-height-28;
-            font-weight: $font-weight-500
+            font-weight: $font-weight-500;
+        }
+
+        @media (max-width: $tablet-width) {
+            margin-right: 0;
+            margin-bottom: 27px;
+        }
+        @media (max-width: $mobile-width) {
+            margin-bottom: 12px;
         }
     }
 
     &__data {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+
+        @media (max-width: $mobile-width) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column nowrap;
+            row-gap: 12px;
+        }
     }
 
-    &__column { 
-        width: 11.5vw;
-        &-title { 
+    &__column {
+        width: 216px;
+        &-title {
             margin-bottom: 15px;
         }
 
-        &-item { 
+        &-item {
             margin-bottom: 15px;
-            &:last-child{
+            &:last-child {
                 margin-bottom: 0;
+            }
+
+            @media (max-width: $mobile-width){
+                font-size: $font-size-14;
+                line-height: $line-height-17;
             }
         }
     }

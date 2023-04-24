@@ -1,17 +1,17 @@
-html { 
+html {
     font-family: "Rubik";
     font-size: 100%;
     font-weight: 400;
     color: $white;
 }
 
-body { 
+body {
     overflow-x: hidden;
     position: relative;
     display: flex;
     flex-flow: column nowrap;
-    
-    header { 
+
+    header {
         flex-shrink: 0;
     }
     main {
@@ -24,7 +24,23 @@ body {
     }
 }
 
-.container { 
-    max-width: 1160px;
+.container {
+    max-width: 1136px;
     margin: 0 auto;
+    padding: 0 12px;
+
+    @media (max-width: $desktop-width) {
+        max-width: 960px;
+    }
+
+    @media (max-width: $tablet-width) {
+        max-width: 640px;
+    }
+
+    @media (max-width: $tablet-width-small) {
+        max-width: 480px;
+    }
+    @media (max-width: $mobile-width) {
+        max-width: 320px;
+    }
 }
