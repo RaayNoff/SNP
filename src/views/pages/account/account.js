@@ -1,13 +1,15 @@
 /* eslint-disable prefer-const */
 const getBalanceClassName = 'balance__link';
-const Button1500ClassName = 'plans__first';
-const Button2000ClassName = 'plans__second';
-const Button3000ClassName = 'plans__third';
+const yearButtonClassName = 'plans__first';
+const halfYearButtonClassName = 'plans__second';
+const monthButtonClassName = 'plans__third';
 
 const getBalance = document.querySelector(`.${getBalanceClassName}`);
-const Button1500 = document.querySelector(`.${Button1500ClassName}`);
-const Button2000 = document.querySelector(`.${Button2000ClassName}`);
-const Button3000 = document.querySelector(`.${Button3000ClassName}`);
+const yearButton = document.querySelector(`.${yearButtonClassName}`);
+const halfYearButton = document.querySelector(`.${halfYearButtonClassName}`);
+const monthButton = document.querySelector(`.${monthButtonClassName}`);
+
+const buttonArray = [yearButton, halfYearButton, monthButton];
 
 let balance = 0;
 let currentSub = 'У вас нет активного абонемента';
@@ -45,17 +47,17 @@ function onClick(subPrice, subLabel) {
     }
 }
 
-Button1500.addEventListener('click', (event) => {
+yearButton.addEventListener('click', (event) => {
     event.preventDefault();
     onClick(yearSub, yearSubLabel);
 });
 
-Button2000.addEventListener('click', (event) => {
+halfYearButton.addEventListener('click', (event) => {
     event.preventDefault();
     onClick(halfYearSub, halfYearSubLabel);
 });
 
-Button3000.addEventListener('click', (event) => {
+monthButton.addEventListener('click', (event) => {
     event.preventDefault();
     onClick(monthSub, monthSubLabel);
 });
