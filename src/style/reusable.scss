@@ -3,12 +3,31 @@
     line-height: $line-height-36;
     font-weight: $font-weight-500;
     text-transform: uppercase;
+
+    @media (max-width: $tablet-width) {
+        font-size: $font-size-24;
+        line-height: $line-height-28;
+    }
+
+    @media (max-width: $tablet-width-small) {
+        font-size: $font-size-18;
+        line-height: $line-height-21;
+    }
 }
 
 .descr {
     font-size: $font-size-18;
     line-height: $line-height-21;
     font-weight: $font-weight-400;
+
+    @media (max-width: $tablet-width) {
+        font-size: $font-size-16;
+        line-height: $line-height-19;
+    }
+    @media (max-width: $tablet-width-small) {
+        font-size: $font-size-14;
+        line-height: $line-height-17;
+    }
 }
 
 .page-title {
