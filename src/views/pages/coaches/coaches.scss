@@ -1,0 +1,30 @@
+.coaches {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__hero__title {
+        margin: 50px 0px 50px 0px;
+        font-size: $font-size-30;
+        font-weight: $font-weight-500;
+        text-align: center;
+
+        @media (max-width: $tablet-width) {
+            font-size: $font-size-24;
+        }
+        @media (max-width: $tablet-width-small) {
+            font-size: $font-size-18;
+            margin: 35px 0px 35px 0px;
+        }
+        @media (max-width: $tablet-width-small) {
+            margin: 20px 0px 20px 0px;
+        }
+    }
+
+    &__panels {
+        display: grid;
+        gap: 71px;
+        margin-bottom: 100px;
+    }
+}
+

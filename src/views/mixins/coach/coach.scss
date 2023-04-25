@@ -1,0 +1,120 @@
+.coach {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__info{
+        margin-left: 20px;
+        width: 700px;
+
+        @media (max-width: $desktop-width) {
+            width: 585px;
+        }
+        @media (max-width: $tablet-width) {
+            margin-left: 10px;
+            width: 365px;
+        }
+        @media (max-width: $tablet-width-small) {
+            margin-left: 10px;
+            width: 256px;
+        }
+        @media (max-width: $mobile-width) {
+            margin-left: 10px;
+            width: 143px;
+        }
+    }
+
+    &__title{
+        font-size: $font-size-24;
+        padding-bottom: 20px;
+
+        @media (max-width: $tablet-width-small) {
+            font-size: $font-size-18;
+        }
+        @media (max-width: $mobile-width) {
+            font-size: $font-size-14;
+        }
+    }
+
+    &__subtitle{
+        font-size: $font-size-18;
+        padding-bottom: 20px;
+        
+        @media (max-width: $mobile-width) {
+            font-size: $font-size-14;
+        }
+    }
+
+    &__text{
+        font-size: $font-size-14;
+        padding-top: 5px;
+    }
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &__image{
+        width: 311px;
+        height: 373px;
+
+        @media (max-width: $tablet-width) {
+            width: 235px;
+            height: 282px;
+        }
+        @media (max-width: $tablet-width-small) {
+            width: 185px;
+            height: 222px;
+        }
+        @media (max-width: $mobile-width) {
+            width: 150px;
+            height: 180px;
+        }
+    }
+
+    &__name{
+        background-color: $red;
+        height: 77px;
+        width: 274px;
+        border-radius: 3px;
+        position: absolute;
+        top: 330px;
+
+        @media (max-width: $tablet-width) {
+            width: 221px;
+            height: 64px;
+            top: 250px;
+        }
+        @media (max-width: $tablet-width-small) {
+            width: 171px;
+            height: 51px;
+            top: 197px;
+        }
+        @media (max-width: $mobile-width) {
+            width: 138px;
+            height: 44px;
+            top: 160px;
+        }
+        
+        p{
+            font-size: $font-size-30;
+            font-weight: $font-weight-500;
+            text-align: left;
+            margin: 0px 0px 0px 0px;
+            padding: 5px 5px 5px 4px;
+
+            @media (max-width: $tablet-width) {
+                font-size: $font-size-24;
+            }
+            @media (max-width: $tablet-width-small) {
+                font-size: $font-size-18;
+            }
+            @media (max-width: $mobile-width) {
+                font-size: $font-size-14;
+            }
+        }
+    }
+}

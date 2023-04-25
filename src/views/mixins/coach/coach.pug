@@ -1,0 +1,20 @@
+mixin coach(icon, title, name, exp, education, quote)
+    div(class='coach')
+        div(class='coach__icon icon')
+            <img src="images/#{icon}.png" alt=#{icon} class='icon__image'>
+            div(class='icon__name') <p>#{name}
+        div(class='coach__info')
+            <p class='coach__title'> #{title}
+            <details class='coach__subtitle'>
+                <summary>Стаж работы</summary>
+                    <p class='coach__text'>#{exp}
+            </details>
+            <details class='coach__subtitle'>
+                <summary>Образование</summary>
+                    <p class='coach__text'>#{education}
+            </details>
+            <details class='coach__subtitle'>
+                <summary>Цитата</summary>
+                    <p class='coach__text'>#{quote}
+            </details>
+
