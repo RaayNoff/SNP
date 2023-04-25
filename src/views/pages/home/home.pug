@@ -8,10 +8,10 @@ block content
                 <div class="container">
                     <div class="hero__info">
                         <h1 class="hero__title">
-                        | Улучшите своё здоровье<br/>по новой методике от<br/>наших тренеров!
+                        | Улучшите своё здоровье по новой методике от наших тренеров!
                         </h1>
                         <p class="hero__subtitle">
-                        | Физкультурно-оздоровительный центр<br/>“Wellness Republic”
+                        | Физкультурно-оздоровительный центр “Wellness Republic”
                         </p>
                         +button('Получить персональный тариф')(class="hero__button")
                     </div>
@@ -43,7 +43,7 @@ block content
                         each badge in badges
                             +badge(badge)
                     </div>
-                    <p class="info__descr">Помимо этого в «Wellness republic» вы получите высококвалифицированных<br>тренеров, которые готовы помочь вам становиться лучшими как в индивидуальном<br>подходе, так и в групповых занятиях</p>
+                    <p class="info__descr descr">Помимо этого в «Wellness republic» вы получите высококвалифицированных<br>тренеров, которые готовы помочь вам становиться лучшими как в индивидуальном<br>подходе, так и в групповых занятиях</p>
                 </div>
             </section>
             <section class="home__gallery gallery">
@@ -74,36 +74,33 @@ block content
                 <div class="container">
                     <h2 class="adv__title title">наши преимущества</h2>
                     <div class="adv__cards">
-                        <div class="blob">
-                            include images/blob1.svg
-                        </div>
-                        <div class="blob">
-                            include images/blob2.svg
-                        </div>
-                        <div class="blob">
-                            include images/blob3.svg
-                        </div>
-                        <div class="blob">
-                            include images/blob4.svg
-                        </div>
-                        div(class='adv-card')
-                            div(class='adv-card__icon' style='background-color: #258181')
-                                include images/wallet.svg
-                            
-                            h3(class='adv-card__title') Программа лояльности
-                            p(class="adv-card__descr descr") Кэшбек за тренировку
-                        div(class='adv-card')
-                            div(class='adv-card__icon' style='background-color: #99C939')
-                                include images/user.svg
-                            
-                            h3(class='adv-card__title') Опытные тренеры
-                            p(class="adv-card__descr descr") Опытные тренеры - стаж работы от 3 лет
-                        div(class='adv-card')
-                            div(class='adv-card__icon' style='background-color: #31AC31')
-                                include images/ruler.svg
-                            
-                            h3(class='adv-card__title') Большая площадь
-                            p(class="adv-card__descr descr") Размер комплекса 2000 кв. метров
+
+                        div(class="adv-wrapper")
+                            div(class='adv-card')
+                                div(class='adv-card__icon' style='background-color: #258181')
+                                    include images/wallet.svg
+                                h3(class='adv-card__title') Программа лояльности
+                                p(class="adv-card__descr descr") Кэшбек за тренировку
+                            div(class="blob")
+                                include images/blob1.svg
+
+                        div(class="adv-wrapper")
+                            div(class='adv-card')
+                                div(class='adv-card__icon' style='background-color: #99C939')
+                                    include images/user.svg
+                                h3(class='adv-card__title') Опытные тренеры
+                                p(class="adv-card__descr descr") Опытные тренеры - стаж работы от 3 лет
+                            div(class="blob")
+                                include images/blob2.svg
+
+                        div(class="adv-wrapper")
+                            div(class='adv-card')
+                                div(class='adv-card__icon' style='background-color: #31AC31')
+                                    include images/ruler.svg
+                                h3(class='adv-card__title') Большая площадь
+                                p(class="adv-card__descr descr") Размер комплекса 2000 кв. метров
+                            div(class="blob")
+                                include images/blob3.svg
                     </div>
                 </div>
             </section>

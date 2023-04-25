@@ -10,6 +10,11 @@
         line-height: $line-height-28;
         font-size: $font-size-24;
         font-weight: $font-weight-500;
+
+        @media (max-width: $tablet-width-small){
+            font-size: $font-size-16;
+            line-height: $line-height-19;
+        }
     }
 
     &__check {
