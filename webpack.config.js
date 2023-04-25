@@ -17,6 +17,7 @@ module.exports = {
         trainings: './views/pages/trainings/trainings.pug',
         tariffs: './views/pages/tariffs/tariffs.pug',
         account: './views/pages/account/account.pug',
+        coaches: './views/pages/coaches/coaches.pug',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
