@@ -17,9 +17,21 @@
     $heroRoot: &;
     position: relative;
     margin-bottom: 50px;
+    overflow: hidden;
+    height: 580px;
 
+    @media (max-width: $desktop-width) {
+        height: 480px;
+    }
+    @media (max-width: $tablet-width) {
+        height: 380px;
+    }
+    @media (max-width: $tablet-width-small) {
+        height: 320px;
+    }
     @media (max-width: $mobile-width) {
         display: flex;
+        height: 540px;
         flex-flow: column nowrap;
         align-items: center;
         margin-bottom: -160px;
@@ -30,33 +42,30 @@
         line-height: $line-height-66;
         font-weight: $font-weight-700;
         margin-bottom: 10px;
-
-        @media (min-width: 1921px) {
-            font-size: $font-size-56;
-        }
-
-        @media (max-width: 1920px) {
-            max-width: 725px;
-            @include calc-font-size(0, 120, $font-size-24n, $font-size-56n);
-        }
+        width: 725px;
 
         @media (max-width: $desktop-width) {
-            max-width: 560px;
+            font-size: 46px;
             line-height: 55px;
-            letter-spacing: 0.025em;
+            width: 464px;
         }
 
         @media (max-width: $tablet-width) {
-            @include calc-font-size(15, 60, $font-size-24n, $font-size-36n);
+            font-size: 36px;
             line-height: 43px;
-            max-width: 520px;
+            width: 464px;
         }
 
         @media (max-width: $tablet-width-small) {
-            @include calc-font-size(15, 60, $font-size-24n, $font-size-24n);
+            font-size: 24px;
             line-height: 28px;
-            max-width: 320px;
-            letter-spacing: 0.0001em;
+            width: 319px;
+        }
+
+        @media (max-width: $mobile-width) {
+            font-size: 24px;
+            line-height: 28px;
+            width: 298px;
         }
     }
 
@@ -75,11 +84,18 @@
             max-width: 317px;
             font-size: $font-size-16;
             line-height: $line-height-19;
+            margin-bottom: 20px;
         }
 
         @media (max-width: $tablet-width-small) {
             font-size: $font-size-14;
             line-height: $line-height-17;
+            margin-bottom: 20px;
+        }
+        @media (max-width: $mobile-width) {
+            font-size: $font-size-14;
+            line-height: $line-height-17;
+            margin-bottom: 20px;
         }
     }
 
@@ -88,6 +104,8 @@
         line-height: $line-height-21 !important;
         font-weight: $font-weight-700 !important;
         padding: 12px 62px !important;
+        z-index: 0;
+        position: relative;
 
         @media (max-width: 834px) {
             font-size: $font-size-14 !important;
@@ -102,91 +120,41 @@
 
     &__info {
         position: relative;
-        z-index: 2;
     }
 
     &__images {
         position: absolute;
-        z-index: 1;
+        z-index: 9;
         pointer-events: none;
         left: 50%;
         top: 0;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        width: 705px;
+        transform: translateX(-53px) translateY(-4px);
+
+        @media (max-width: $desktop-width) {
+            width: 572px;
+            //transform: translateX(-174px) translateY(-4px);
+        }
+
+        @media (max-width: $tablet-width) {
+            width: 363px;
+            transform: translateX(70px) translateY(45px);
+        }
+
+        @media (max-width: $tablet-width-small) {
+            transform: translateX(50px) translateY(60px);
+            width: 250px;
+        }
 
         @media (max-width: $mobile-width) {
             position: static;
-        }
-
-        #{$heroRoot}__img-wrapper {
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        .large-dumbbell {
-            max-width: 705px;
-            position: relative;
-            z-index: 9;
-            transform: translateX(-74px) translateY(-4px);
-            @media (max-width: $desktop-width) {
-                max-width: 572px;
-                transform: translateX(-40px) translateY(-6px);
-            }
-
-            @media (max-width: $tablet-width) {
-                max-width: 363px;
-                transform: translateX(50px) translateY(40px);
-            }
-            
-            @media (max-width: 828px) {
-                transform: translateX(-70px) translateY(40px);
-            }
-
-            @media (max-width: $tablet-width-small) {
-                transform: translateX(50px) translateY(40px);
-                max-width: 250px;
-            }
-
-            @media (max-width: 606px) {
-                transform: translateX(-20px) translateY(40px);
-            }
-
-            @media (max-width: $mobile-width) {
-                transform: translateX(25px) translateY(-40px);
-            }
-        }
-
-        .small-dumbbell {
-            max-width: 211px;
-            transform: translateY(-350px) translateX(312px);
-            filter: blur(2px);
-
-            @media (max-width: $desktop-width) {
-                max-width: 171px;
-                transform: translateY(-292px) translateX(268px);
-            }
-
-            @media (max-width: $tablet-width) {
-                max-width: 95px;
-                transform: translateX(250px) translateY(-120px);
-            }
-
-            @media (max-width: 828px) {
-                transform: translateX(180px) translateY(-120px);
-            }
-            
-            @media (max-width: $tablet-width-small) {
-                max-width: 75px;
-                transform: translateX(175px) translateY(-80px);
-            }
-
-            @media (max-width: 606px) {
-                transform: translateX(125px) translateY(-80px);
-            }
-
-            @media (max-width: $mobile-width) {
-                transform: translateX(160px) translateY(-150px);
-            }
+            transform: translateX(25px) translateY(-40px);
+            width: 250px;
         }
     }
 }
@@ -219,7 +187,7 @@
         align-items: center;
         justify-content: center;
         margin: 0 auto;
-        width: 70%;
+        width: 100%;
 
         column-gap: 2.15vw;
         margin-bottom: 48px;
@@ -227,7 +195,7 @@
 
         @media (max-width: $tablet-width-small) {
             column-gap: 42px;
-            row-gap: 30px;
+            row-gap: 20px;
         }
     }
 }

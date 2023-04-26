@@ -1,5 +1,5 @@
 mixin input(label, id)
     div(class!='custom-input ' + attributes.class)
         label(for!=id class='custom-input-label') #{label}
-        input(id!=id class='custom-input-field' placeholder!=attributes.placeholder type!=attributes.type)
+        input(id!=id class='custom-input-field' placeholder!=attributes.placeholder type!=attributes.type required!=attributes.required)
     
