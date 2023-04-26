@@ -3,6 +3,22 @@
 // eslint-disable-next-line object-curly-spacing
 import Swiper, { Navigation, Pagination } from 'swiper';
 
+const getGoodButtonClassName = 'hero__button';
+const offerButtonClassName = 'offer__button';
+
+const getGoodButton = document.querySelector(`.${getGoodButtonClassName}`);
+const offerButton = document.querySelector(`.${offerButtonClassName}`);
+
+getGoodButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.href = 'tariffs.html';
+});
+
+offerButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.href = 'account.html';
+});
+
 const swiper = new Swiper('.swiper', {
     modules: [Navigation, Pagination],
     speed: 400,
