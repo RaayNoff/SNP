@@ -5,14 +5,14 @@ include mixins/mixins.pug
 block content
     <main class="auth">
         <div class="container">
-            <form class="auth__form" name="form" onsubmit="validateForm()">
+            <form id="auth" class="auth__form" name="form" >
                 <div class="auth__form-header">
                     <div class="auth__form-header-logo">
                         include images/logo.svg
                     </div>
                     <h3 class="auth__form-header-title">Вход в Wellness Republic</h3>
                 </div>
-                +input('Логин', 'login')(class="auth__form-input", placeholder="Введите ваш логин...", type="text" id="email" required )
+                +input('Email', 'email')(class="auth__form-input", placeholder="Введите ваш email...", type="email" id="email" required )
                 +input('Пароль', 'password')(class="auth__form-input", placeholder="Введите ваш пароль...", type="password" id="password" required)
                 +button('Войти')(class="auth__form-submit" type="submit")
             </form>
